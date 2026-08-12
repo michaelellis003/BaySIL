@@ -73,7 +73,7 @@ convention = "google"
 
 [tool.ruff.lint.per-file-ignores]
 # Tests use class-based grouping; method docstrings are noisy.
-"tests/*" = ["D102", "D103", "D104"]
+"tests/*" = ["undocumented-public-method", "undocumented-public-function", "undocumented-public-package"]
 
 [tool.ruff.format]
 docstring-code-format = true
