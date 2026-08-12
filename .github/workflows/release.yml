@@ -18,6 +18,9 @@ jobs:
   release:
     if: github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
+    # Gates the entire job behind manual approval: nothing is computed, tagged,
+    # pushed, or published until a required reviewer approves the run.
+    environment: release
     timeout-minutes: 15
     steps:
       - name: Checkout
