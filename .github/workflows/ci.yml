@@ -168,7 +168,7 @@ jobs:
           import tomllib
           with open('pyproject.toml', 'rb') as f:
               name = tomllib.load(f)['project']['name']
-          print(name.replace('-', '_'))
+          print(name.replace('-', '_').lower())
           ")
           if [[ -z "$PACKAGE_NAME" ]]; then
             echo "::error::Failed to extract package name from pyproject.toml"

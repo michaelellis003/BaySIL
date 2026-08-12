@@ -24,4 +24,6 @@ jobs:
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # PAT with `workflow` scope: GITHUB_TOKEN cannot merge PRs that edit
+          # .github/workflows/** (no `workflows` permission scope exists for it).
+          GH_TOKEN: ${{ secrets.DEPENDABOT_TOKEN }}
