@@ -1,1 +1,3 @@
-* @michaelellis003
+# Default owner for everything in the repo.
+# Auto-requests review on every PR; does not block merging.
+*       @michaelellis003
