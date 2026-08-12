@@ -1,10 +1,10 @@
 name: Release
 
+# Releases are cut deliberately, not on every merge to main. Run this from the
+# Actions tab when you want to ship; semantic-release still derives the version
+# from the conventional commits accumulated since the last tag.
 on:
-  workflow_run:
-    workflows: [CI]
-    types: [completed]
-    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -16,7 +16,10 @@ concurrency:
 
 jobs:
   release:
-    if: github.event.workflow_run.conclusion == 'success'
+    # The old workflow_run trigger was pinned to main; workflow_dispatch can be
+    # started from any ref, so keep the invariant explicit — this job pushes to
+    # main and must not run from anywhere else.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     # Gates the entire job behind manual approval: nothing is computed, tagged,
     # pushed, or published until a required reviewer approves the run.
