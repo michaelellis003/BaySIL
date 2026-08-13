@@ -6,12 +6,24 @@
 
 Bayesian Sequential Inference Library
 
+## Installation
+
+```bash
+pip install baysil
+```
+
+Or with uv:
+
+```bash
+uv add baysil
+```
+
 ## Requirements
 
 - Python 3.12 or later
 - [uv](https://docs.astral.sh/uv/) installed
 
-## Getting started
+## Contributing
 
 Clone the repository and install dependencies:
 
@@ -46,13 +58,24 @@ make clean       # git clean (preserves .venv)
 
 ## How releases work
 
-Releases are fully automated. When a commit lands on `main` and CI
-passes, `python-semantic-release` inspects the commit history to
-determine whether a version bump is warranted:
+Releases are cut deliberately. Merging to `main` runs CI only — nothing
+is published.
+
+To ship a version, run the **Release** workflow from the Actions tab. It
+waits for maintainer approval before anything is computed, tagged, or
+published. `python-semantic-release` then inspects the commits since the
+last tag to determine the version:
 
 - `fix: ...` produces a patch release
 - `feat: ...` produces a minor release
 - A `BREAKING CHANGE` footer or `!` suffix produces a major release
+
+If nothing warrants a bump the run exits without releasing. Set the
+`force` input to cut one anyway — useful for re-publishing after a failed
+upload.
+
+Documentation is deployed from the release tag, so the published docs
+always describe the released version rather than `main`.
 
 ## License
 

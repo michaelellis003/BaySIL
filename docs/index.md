@@ -2,7 +2,21 @@
 
 Bayesian Sequential Inference Library
 
-## Quick start
+## Installation
+
+```bash
+pip install baysil
+```
+
+Or with uv:
+
+```bash
+uv add baysil
+```
+
+## Contributing
+
+Clone the repository and install dependencies:
 
 ```bash
 git clone https://github.com/michaelellis003/BaySIL.git
