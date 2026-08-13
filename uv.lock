@@ -26,7 +26,7 @@ wheels = [
 
 [[package]]
 name = "baysil"
-version = "1.0.1"
+version = "1.0.2"
 source = { editable = "." }
 
 [package.dev-dependencies]

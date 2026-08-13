@@ -1,6 +1,6 @@
 [project]
 name = "BaySIL"
-version = "1.0.1"
+version = "1.0.2"
 description = "Bayesian Sequential Inference Library"
 readme = "README.md"
 authors = [

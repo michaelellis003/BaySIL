@@ -2,6 +2,19 @@
 
 <!-- version list -->
 
+## v1.0.2 (2026-08-13)
+
+### Continuous Integration
+
+- Push release branch and tag atomically ([#10](https://github.com/michaelellis003/BaySIL/pull/10),
+  [`511e735`](https://github.com/michaelellis003/BaySIL/commit/511e735806d62f12ecd3c7c010d9d8dd62ea6060))
+
+### Documentation
+
+- Add contributing guide ([#11](https://github.com/michaelellis003/BaySIL/pull/11),
+  [`09ea379`](https://github.com/michaelellis003/BaySIL/commit/09ea379027074bb01d964cb87f108f319c335ddb))
+
+
 ## v1.0.1 (2026-08-13)
 
 ### Continuous Integration
