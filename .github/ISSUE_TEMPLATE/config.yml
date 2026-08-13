@@ -1,0 +1,12 @@
+# Left enabled deliberately: forcing every report through a template
+# guarantees structure, but for a project this young, deterring a report
+# is worse than receiving an unstructured one.
+blank_issues_enabled: true
+
+contact_links:
+  - name: Documentation
+    url: https://michaelellis003.github.io/BaySIL/
+    about: Please check the documentation before opening an issue.
+  - name: Contributing guide
+    url: https://github.com/michaelellis003/BaySIL/blob/main/CONTRIBUTING.md
+    about: How to set up a development environment and open a pull request.

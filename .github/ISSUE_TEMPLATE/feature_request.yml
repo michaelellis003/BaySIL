@@ -1,0 +1,36 @@
+name: Feature request
+description: Suggest a new capability or a change to an existing one
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Opening an issue before writing code is the right call for anything
+        beyond a typo — it is much cheaper than a pull request that gets
+        declined after the work is done.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: >-
+        Describe the situation you are in, rather than the solution. What are
+        you trying to do that BaySIL makes hard or impossible today?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What would the API or behaviour look like? Sketch code if it helps.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other approaches you looked at, and why they fall short.
+    validations:
+      required: false
