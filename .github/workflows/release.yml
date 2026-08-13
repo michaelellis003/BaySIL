@@ -68,7 +68,11 @@ jobs:
           git tag -d "v${VERSION}"
           git commit --amend --no-edit
           git tag "v${VERSION}"
-          git push origin main "v${VERSION}"
+          # --atomic so the branch and tag succeed or fail together. Without it
+          # git updates refs independently, so a stale run whose main push is
+          # rejected as non-fast-forward can still land the tag, leaving it
+          # pointing at a commit that is not on main.
+          git push --atomic origin main "v${VERSION}"
 
       - name: Build package
         if: steps.semver.outputs.released == 'true'
