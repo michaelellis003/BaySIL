@@ -1,9 +1,15 @@
 name: Deploy Documentation
 
-# Docs track main rather than releases, so they stay current between versions.
+# The API reference is generated from src/, so publishing on every merge to main
+# would document functions that are not in the released package on PyPI. Deploy
+# on release instead: the `release` event checks out the tag, so the published
+# docs always match the released version.
+#
+# For manual runs, pick the release tag in the "Use workflow from" selector -
+# dispatching from main would republish unreleased docs.
 on:
-  push:
-    branches: [main]
+  release:
+    types: [published]
   workflow_dispatch:
 
 # Sets permissions to allow deployment to GitHub Pages
