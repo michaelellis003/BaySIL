@@ -2,6 +2,26 @@
 
 Thanks for your interest in contributing.
 
+## Issues
+
+Bug reports, questions, and feature requests all belong in
+[GitHub Issues](https://github.com/michaelellis003/BaySIL/issues).
+
+For a bug report, please include:
+
+- What you expected to happen, and what happened instead
+- A minimal snippet that reproduces it
+- The output of:
+
+```bash
+python -c "import baysil, sys; print(baysil.__version__, sys.version)"
+```
+
+**Before opening a pull request for anything beyond a typo or a docs
+tweak, please open an issue first** so the approach can be agreed on.
+BaySIL is maintained by one person, and a short discussion up front is
+much cheaper than a rejected pull request after the work is done.
+
 ## Getting set up
 
 BaySIL uses [uv](https://docs.astral.sh/uv/) for dependency management and
