@@ -5,6 +5,15 @@ name: Release
 # from the conventional commits accumulated since the last tag.
 on:
   workflow_dispatch:
+    inputs:
+      force:
+        description: >-
+          Cut a release even when no commit warrants a bump. Leave on "auto"
+          to let semantic-release decide from the commit history.
+        required: false
+        default: auto
+        type: choice
+        options: [auto, patch, minor, major]
 
 permissions:
   contents: write
@@ -42,6 +51,10 @@ jobs:
           github_token: ${{ secrets.RELEASE_TOKEN }}
           push: "false"
           vcs_release: "false"
+          # Empty is an explicit no-op in the action, so "auto" maps to "".
+          # Written this way round because `x == 'auto' && '' || x` would fall
+          # through to the right-hand side - '' is falsy in GitHub expressions.
+          force: ${{ inputs.force != 'auto' && inputs.force || '' }}
 
       - name: Update lockfile and push release
         if: steps.semver.outputs.released == 'true'
