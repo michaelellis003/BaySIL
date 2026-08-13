@@ -1,0 +1,47 @@
+name: Bug report
+description: Report something that is not working as documented
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a report. The fields below are the
+        ones that make a bug actionable without a round trip.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: What did you expect to happen, and what happened instead?
+      placeholder: |
+        I expected ... but instead ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: >-
+        The smallest snippet that shows the problem. Please trim anything not
+        needed to trigger it.
+      render: python
+    validations:
+      required: true
+
+  - type: textarea
+    id: version
+    attributes:
+      label: Version
+      description: 'Paste the output of: `python -c "import baysil, sys; print(baysil.__version__, sys.version)"`'
+      render: shell
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: macOS 15.2, Ubuntu 24.04, Windows 11
+    validations:
+      required: false
